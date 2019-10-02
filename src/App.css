@@ -1,33 +1,346 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap");
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  box-sizing: border-box;
+  font-family: Roboto,sans-serif;
+  background: #282928;
+}
+
+.navbar {
+  background: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #ffa64d;
+  z-index:1;
+}
+.fa-bars{
+  display: none;
+  padding: 35px;
+  font-size: 25px;
+}
+.navbar-items{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-items a{
+  font-family: 'Merriweather Sans', sans-serif;
+  display: block;
+  padding: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffa64d;
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
+
+.navbar-items ul{
+  display: flex;
+  list-style-type: none;
+}
+.navbar-items ul li a{
+  font-size: 15px;
+}
+
+.navbar-items li:hover{
+  border-bottom: 2px solid #ffa64d;
+}
+
+.hero{
+  position: relative;
+  z-index: -1;
+  font-family: b612;
+}
+
+.hero img{
+  width: 100%;
+  height: 100vh;
+}
+
+.details-section{
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: #ffa64d;
+}
+
+.intro{
+  font-size: 1.5vw;
+  color: whitesmoke;
+  font-weight: lighter;
+  width: 80%;
+}
+.title{
+  font-size: 3vw;
+}
+.subtitle{
+  font-size: 2vw;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.description{
+  margin-top: -5px;
+  display: flex;
+  justify-content: center;
+}
+.description-content{
+  background: url(./images/hero-3.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 90px 55px;
+  color: #fff;
+  text-align: center;
+  
+}
+
+.description h1{
+  font-size: 50px;
+}
+
+.description-grid{
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 100px;
+  text-align: start;
+}
+
+.text-section p{
+  margin-bottom: 15px;
+  font-weight: lighter;
+}
+
+.contact-section p,
+.contact-section a{
+  margin: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.gallery{
+  color: #fff;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.gallery h1{
+  margin-bottom: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gallery-grid{
+  width: 80%;
+  margin:0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+.gallery-grid img{
+  width: 100%;
+  max-height: 300px;
+
+}
+.schedule{
+  color: #fff;
+  width: 60%;
+  margin:0 auto;
+  text-align: center; 
+  font-family: 'Courier New', Courier, monospace
+}
+
+.schedule-content{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  padding: 40px 0 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.services{
+  color: #fff;
+  padding: 50px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.services-content{
+  width: 50%;
+  margin: 0 auto;
+}
+.services-content ul{
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.services-content table{
+  position: sticky;
+  left: 43%;
+  margin-bottom: 50px;
+}
+
+.services td ,.services th{
+  padding: 20px;
+  border-bottom: 1px dotted #fff;
+  text-align: start;
+}
+
+@media screen and (min-width:2545px){
+  .navbar-items a,
+  .navbar-items ul li a{
+    font-size: 3vh;
+    padding: 3vh;
   }
-  to {
-    transform: rotate(360deg);
+  .services-content table{
+    left: 47%;
+  }
+}
+
+@media screen and (max-width:1550px){
+  .navbar-items a{
+    font-size: 16px;
+    padding: 25px;
+  }
+  
+  .services-content table{
+    left: 41%;
+  }
+}
+
+@media screen and (max-width:1281px){
+  .navbar-items a{
+    font-size: 13px;
+    padding: 15px;
+  }
+  
+  .hero img{
+    height:inherit;
+  }
+  .description h1{
+    font-size: 35px;
+  }
+  .description-grid{
+    display: block;
+    font-size: 16px;
+  }
+  .contact-section{
+    margin-left: 30%;
+  }
+  .services-content table{
+    left: 41%;
+  }
+  
+}
+
+@media screen and (max-width:900px){
+  .description{
+    padding: 0;
+    margin-top: -5px;
+    width: 100%;
+    display: block;
+    justify-content: center;
+  }
+  .description-content h1{
+    font-size: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+  }
+  .description-grid{
+    margin: 0;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .services-content table{
+    font-size: 15px;
+  }
+  .services-content ul{
+    font-size: 10px;
+    display: block;
+    text-align: center;
+  }
+  .schedule-content{
+    display: block;
+    font-size: 12px;
+  }
+  .schedule-content section{
+    padding-bottom: 30px;
+  }
+}
+
+
+@media screen and (max-width:415px){
+  .navbar-items ul{
+    display: none;
+  }
+  .fa-bars{
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar-items{
+    width: 100%;
+  }
+  .navbar-items a,
+  .navbar-items i{
+    font-size: 13px;
+    padding: 15px;
+  }
+  .navbar-items li{
+    padding: 10px;
+    font-size: 12px;
+  }
+  .details-section{
+    left: 15%;
+  }
+  .description{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    justify-content: center;
+  }
+  .description-content{
+    padding: 0;
+  }
+  .description-content h1{
+    font-size: 5vw;
+    margin-bottom: 30px;
+  }
+  .description-grid{
+    margin: 0;
+    font-size: 3vw;
+  }
+
+  .gallery h1{
+    font-size: 25px;
+  }
+  .contact-section{
+    margin: 0;
+  }
+
+  .services{
+    padding: 0;
+  }
+  .services-content table{
+    font-size: 12px;
+    width: 100%;
+  }
+  .services-content table td{
+    padding: 4px;
+  }
+  .services-content ul{
+    display: block;
+    font-size: 13px;
   }
 }
